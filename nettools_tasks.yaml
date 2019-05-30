@@ -1,0 +1,9 @@
+---
+- name: Install nettools
+  apt:
+    name:
+      - curl
+      - arp-scan
+      - nmap
+      - net-tools
+  become: yes

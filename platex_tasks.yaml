@@ -1,0 +1,15 @@
+---
+- name: Install platex
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - texlive-lang-japanese
+      - texlive-extra-utils
+      - texlive-science
+      # - texlive-lang-cjk
+      # - xdvik-ja
+      # - evince
+      # - texlive-fonts-recommended
+      # - texlive-fonts-extra
+  become: yes

@@ -1,0 +1,5 @@
+---
+- name: Install peco
+  apt:
+    name: peco
+  become: yes

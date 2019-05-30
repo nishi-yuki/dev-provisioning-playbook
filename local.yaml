@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: apt update
+      apt:
+        update_cache: yes
+      become: yes
+
+    - name: Install ediors
+      import_tasks: editors_tasks.yaml
+
+    - name: Install langage tools
+      import_tasks: langages_tasks.yaml
+
+    - name: Install net tools
+      import_tasks: nettools_tasks.yaml
+
+    - name: Install platex
+      import_tasks: platex_tasks.yaml
+
+    - name: Install terminal
+      import_tasks: terminal_tasks.yaml
+
+    - name: Install fish
+      import_tasks: fish_tasks.yaml
+
+    - name:  etcetera
+      import_tasks: etcetera_tasks.yaml

@@ -1,0 +1,12 @@
+- name: Install fish shell
+  apt:
+    name: fish
+  become: yes
+
+- name: Install fisherman
+  command: curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+  args:
+    creates: ~/.config/fish/functions/fisher.fish
+
+# fisher add oh-my-fish/theme-bobthefish
+# set -U theme_color_scheme light

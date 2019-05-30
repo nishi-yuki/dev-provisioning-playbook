@@ -1,0 +1,28 @@
+---
+- name: install langage cli tools
+  apt:
+    name:
+      - git
+      - gcc
+      - g++
+      - python3-pip
+      - bsdgames
+  become: yes
+
+# - name: install go
+#   snap:
+#     name: go 
+#     classic: yes
+#   become: yes
+
+- name: Check pipenv
+  stat:
+    path: ~/.local/bin/pipenv
+  register: pipenv
+- name: Install pipenv
+  pip:
+    name: pipenv
+    executable: pip3
+    extra_args: --user
+  when: not pipenv.stat.exists
+

@@ -1,0 +1,25 @@
+From f8699b4be6c058fd58a33a1d783cd404e9076b0e Mon Sep 17 00:00:00 2001
+From: Gaetan Semet <gaetan@xeberon.net>
+Date: Tue, 10 Apr 2018 00:31:13 +0200
+Subject: [PATCH] delete tab even without libutempter
+
+fix #1198
+
+Signed-off-by: Gaetan Semet <gaetan@xeberon.net>
+---
+ guake/guake_app.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/guake/guake_app.py b/guake/guake_app.py
+index fd367eb3..6ae52d85 100644
+--- a/guake/guake_app.py
++++ b/guake/guake_app.py
+@@ -1432,7 +1432,7 @@ def on_terminal_exited(self, term, status, widget):
+         log.debug("Terminal exited: %s", term)
+         if libutempter is not None:
+             libutempter.utempter_remove_record(term.get_pty())
+-            self.delete_tab(self.notebook.page_num(widget), kill=False, prompt=False)
++        self.delete_tab(self.notebook.page_num(widget), kill=False, prompt=False)
+ 
+     def recompute_tabs_titles(self):
+         """Updates labels on all tabs. This is required when `self.abbreviate`
