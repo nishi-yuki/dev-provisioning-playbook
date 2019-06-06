@@ -25,5 +25,5 @@
     - name: Install fish
       import_tasks: fish_tasks.yaml
 
-    - name:  etcetera
-      import_tasks: etcetera_tasks.yaml
+    - name:  etc
+      import_tasks: etc_tasks.yaml
