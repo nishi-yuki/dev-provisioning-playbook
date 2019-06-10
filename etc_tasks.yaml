@@ -3,3 +3,9 @@
   apt:
     name: peco
   become: yes
+
+- name: Install misc
+  apt:
+    name:
+      - ubuntu-restricted-addons
+      - ubuntu-restricted-extras
